@@ -6,11 +6,7 @@ const MINIMAL_FIELD_ELEMENTS_PER_BLOB: usize = 4;
 
 fn main() {
     let cargo_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
-    let root_dir = cargo_dir
-        .parent()
-        .expect("rust dir is nested")
-        .parent()
-        .expect("bindings dir is nested");
+    let root_dir = cargo_dir.join("c-kzg-sys");
 
     let (lib_name, field_elements_per_blob) = if cfg!(feature = "minimal-spec") {
         ("ckzg_min", MINIMAL_FIELD_ELEMENTS_PER_BLOB)
