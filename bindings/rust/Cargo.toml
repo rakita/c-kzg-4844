@@ -1,8 +1,10 @@
 [package]
 name = "c-kzg"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "Apache-2.0"
+description = "A minimal implementation of the Polynomial Commitments API for EIP-4844, written in C."
+
 # XXX: Note that we don't set a `links` attribute for Cargo, because this library may link
 # either `ckzg` or `ckzg_min`. This allows the crate to be linked twice as minimal/mainnet variants
 # without Cargo complaining.
@@ -14,7 +16,7 @@ default = ["std", "mainnet-spec"]
 std = ["hex/std", "libc/std", "serde?/std"]
 serde = ["dep:serde"]
 mainnet-spec = []
-minimal-spec = []
+#minimal-spec = []
 
 # BLST Compilation:
 # Suppress multi-threading.
