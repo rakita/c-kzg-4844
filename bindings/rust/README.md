@@ -10,9 +10,6 @@ Based on fbef59a3f9e8fa998bdb5069d212daf83d586aa5 commit from [`ethereum/c-kzg-4
 cargo build --release
 ```
 
-Build with `--features="minimal-spec"` to set the `FIELD_ELEMENTS_PER_BLOB`
-compile time parameter to the pre-determined minimal spec value.
-
 ## Test
 
 ```
