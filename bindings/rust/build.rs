@@ -3,11 +3,14 @@ use std::path::PathBuf;
 
 fn main() {
     let cargo_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
+    /*
     let root_dir = cargo_dir
         .parent()
         .expect("rust dir is nested")
         .parent()
         .expect("bindings dir is nested");
+     */
+    let root_dir = cargo_dir.join("c-kzg-sys");
 
     // Obtain the header files of blst
     let blst_base_dir = root_dir.join("blst");
